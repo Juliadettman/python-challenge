@@ -4,8 +4,7 @@ import csv
 
 # Log file address in py_poll_csv
 py_poll_csv = os.path.join( 'PyPoll2', 'Resources', 'election_data.csv')
-
-# Add variables
+output_analysis = os.path.join( 'PyPoll2', 'Resources', 'election_data.csv')
 total_votes = 0
 candidate_votes = {}
 
@@ -45,3 +44,16 @@ for candidate_name, votes in candidate_votes.items():
 print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
+
+#Create Analysis text file
+output = (
+f"Election Results\n"
+f"-------------------------\n"
+f"Total Votes: {total_votes}\n"
+f"-------------------------\n"
+f"Winner: {winner}\n"
+f"-------------------------\n")
+
+# Export the results to text file
+with open(output_analysis, "w") as txt_file:
+    txt_file.write(output)
