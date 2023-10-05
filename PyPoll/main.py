@@ -50,6 +50,7 @@ output = (
 f"Election Results\n"
 f"-------------------------\n"
 f"Total Votes: {total_votes}\n"
+f"{candidate_name}: {percentage}% ({votes})\n"
 f"-------------------------\n"
 f"Winner: {winner}\n"
 f"-------------------------\n")
