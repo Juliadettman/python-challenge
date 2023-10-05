@@ -4,6 +4,8 @@ import csv
 
 # Capture path in variable
 budget_csv = os.path.join( 'PyBank2', 'Resources', 'budget_data.csv')
+output_analysis - os.path.join( 'PyBank2', 'Resources', 'budget_data.csv')
+
 # Initialize variables
 total_months = 0 
 total_profit_loss = 0
@@ -47,4 +49,17 @@ print(f"Total Months: {total_months}")
 print(f"Total: ${total_profit_loss}")
 print(f"Average Change: ${average_change}")
 print(f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})")
-print(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})")        
+print(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})")  
+
+# Export the results to text file
+output = (
+f"Financial Analysis\n"
+f"--------------------\n"
+f"Total Months: {total_months}\n"
+f"Total: ${total_profit_loss}\n"
+f"Average Change: ${average_change}\n"
+f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})\n"
+f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})\n")       
+
+with open(output_analysis, "w") as txt_file:
+    txt_file.write(output)
